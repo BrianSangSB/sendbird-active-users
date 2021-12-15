@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" />
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sendbird/3.1.4/SendBird.min.js"
+    integrity="sha512-4lFwG8LHQ8NstEN/B9hkJOodBhona+qK1WOugh6lddEZEvNdmSmjwLzeYDfst1oiL3r2KuqWLeuW+/gjp6wlRQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <h1>Sendbird active users</h1>
+
+  <div id="login-wrapper">
+    <form class="pure-form pure-form-stacked">
+      <input type="text" name="app_id" id="app_id" placeholder="Sendbird App ID">
+      <input type="text" name="user_id" id="user_id" placeholder="User ID">
+      <input type="text" name="access_token" id="access_token" placeholder="Access token">
+      <button type="button" id="login-button" class="pure-button pure-button-primary" disabled>Login</button>
+    </form>
+  </div>
+
+  <div class="spinner">
+    <div></div>
+    <div></div>
+  </div>
+
+  <div id="active-users-list">
+    <button id="toggle-button" class="pure-button pure-button-primary">Stop synchronising</button>
+    <table class="pure-table" id="active-users-list-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Nickname</th>
+        </tr>
+      </thead>
+      <tbody id="active-users-list-table-body">
+
+      </tbody>
+    </table>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
